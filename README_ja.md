@@ -2,11 +2,11 @@
 
 ![ORB SLAM3 ROS Docker](https://img.shields.io/badge/ORB_SLAM3_ROS-Docker-blue)
 
-en / [ja](./README_ja.md)
+[en](./README.md) / ja
 
-Container environment in which orb_slam3_ros_wrapper runs.
+orb_slam3_ros_wrapperの実行環境を提供するコンテナ
 
-## References
+## 参照
 
 ---
 
@@ -14,14 +14,14 @@ Container environment in which orb_slam3_ros_wrapper runs.
 - [orb_slam3_ros_wrapper - GitHub](https://github.com/thien94/orb_slam3_ros_wrapper)
 
 
-## Environments
+## 実行環境
 
 ---
 
 - ROS : noetic
 
 
-## Building
+## 環境構築
 
 ---
 
@@ -30,29 +30,29 @@ docker-compose up -d
 ```
 
 
-## Running
+## 実行
 
 ---
 
-GUI display of the ROS tool in the host environment. <br>
+GUIで提供されるROSツールをホスト環境で表示できるようにする <br>
 
 ```bash
 xhost +
 ```
 
 > **Warning** <br>
-> After use, access should be restricted with `xhost -`.
+> 使用後は `xhost -` でアクセス制限を設けること <br>
 
 
-Enter the container: <br>
+コンテナに入る: <br>
 
 ```bash
 docker-compose exec orb-slam3-ros-workspace bash
 ```
 
-Connect a monocular camera. <br>
-Activate the camera node. <br>
-And, run `euroc_mono.launch` from the orb-slam3-ros-wapper package. <br>
+1. 単眼カメラを接続する
+2. カメラノードを起動する(libuvc-camera, noetic-usb-camなど)
+3. orb-slam3-ros-wrapperパッケージの `euroc_mono.launch` を起動する
 
 terminal1 : <br>
 
