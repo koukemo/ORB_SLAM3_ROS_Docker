@@ -7,8 +7,10 @@ services:
     network_mode: "host"
     environment:
       - ROS_MASTER_URI=http://localhost:11311
-      - DISPLAY=host.docker.internal:0
+      - DISPLAY=$DISPLAY
       - XAUTHORITY=/root/.Xauthority
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - $HOME/.Xauthority:/root/.Xauthority
+    devices:
+      - /dev/video0:/dev/video0:mwr
