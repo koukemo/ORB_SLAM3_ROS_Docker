@@ -53,6 +53,7 @@ RUN apt-get update && \
         python3-catkin-tools \
         python3-rosdep \
         python3-argcomplete  \
+	ros-${ROS_DISTRO}-usb-cam \
         ros-${ROS_DISTRO}-rosbridge-server \
         ros-${ROS_DISTRO}-hector-trajectory-server
 
